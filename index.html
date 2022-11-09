@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Insurance Charges Prediction</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 75px;
+            
+            background-color: rgba(52, 221, 103, 0.863);
+
+        }
+        table
+        {
+            margin: auto;
+            padding:auto;
+
+        }
+        td {
+            height: 30px;
+            }
+       
+    </style>
+</head>
+
+<body background="Static/health-insurance.jpg">
+
+    <h1 style="color: rgb(54, 33, 43); border: 20px;"> Medical Insurance Charges Prediction(KNN Model) </h1>
+
+    <form method="POST" action="/predict_charges">
+
+        <table>
+             <tr  border = "1">
+                <td>
+                    <label>Age:</label>
+                </td>
+    
+                <td>
+                    <input type="text" name="age"></select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Sex:</label></td>
+                <td><select name="sex">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>bmi:</label>
+                </td>
+    
+                <td>
+                    <input type="text" name="bmi"></select>
+                </td>
+    
+            <tr>
+                <td>
+                    <label>Smoker:</label>
+                </td>
+                <td>
+                    <label>Yes:</label> <input type="radio" name="smoker" value="yes">
+                    <label>No:</label> <input type="radio" name="smoker" value="no">
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    <label>Children:</label>
+                </td> 
+                <td>
+                    <input type="text" name="children">
+                    </select>
+               </td>
+           </tr>
+    
+    
+           
+          <tr>   
+                <td>
+                    <label>Region:</label>
+                </td>
+                <td><select name="region">
+                    <option value="northeast">Northeast</option>
+                    <option value="southeast">Southeast</option>
+                    <option value="northwest">Northwest</option>
+                    <option value="southwest">Southwest</option>
+                    </select>
+                </td>
+          </tr>
+          <tr>  
+            <td colspan="2">  <input type="submit" value="SUBMIT"></td>
+          
+          </tr>
+            
+    
+        </table>
+    
+        <p>Your insurance premium charges will be <b> {{ prediction }} /- Rs.</b> Only </p>
+
+
+    </form>
+    
+</body>
+
+</html>
